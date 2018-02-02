@@ -34,13 +34,19 @@ class FirefoxDesktop(_ProductDetails):
 
     # Human-readable platform names
     platform_labels = OrderedDict([
-        ('winsha1', 'Windows (XP/Vista)'),
         ('win64', 'Windows 64-bit'),
-        ('win', 'Windows 32-bit'),
         ('osx', 'macOS'),
         ('linux64', 'Linux 64-bit'),
+        ('win', 'Windows 32-bit'),
+        ('winsha1', 'Windows (XP/Vista)'),
         ('linux', 'Linux 32-bit'),
     ])
+
+    # Recommended vs legacy platforms
+    platform_classification = {
+        'recommended': ('win64', 'osx', 'linux64'),
+        'legacy': ('win', 'winsha1', 'linux'),
+    }
 
     # Human-readable channel names
     channel_labels = {
